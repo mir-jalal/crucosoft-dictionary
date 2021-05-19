@@ -54,8 +54,8 @@ public class Main {
         String answer = scanner.nextLine();
 
         if(answer.equals("yes")){
-            dictionaryFile.writeWord(searched);
-            System.out.println("New word is added: " + searched);
+            if(dictionaryFile.writeWord(searched)) System.out.println("New word is added: " + searched);
+            else System.out.println("Cannot add: " + searched);
         }
     }
 }

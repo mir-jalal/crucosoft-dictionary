@@ -17,7 +17,7 @@ public class DictionaryFile {
         else if(defaultDictionaryFile.exists()){
 
             try {
-                newDictionaryFile.createNewFile();
+                if(newDictionaryFile.createNewFile()) System.out.println("New dictionary file created: used default");
                 FileOutputStream fileOutputStream = new FileOutputStream(newDictionaryFile);
                 FileInputStream fileInputStream = new FileInputStream(defaultDictionaryFile);
 
@@ -29,7 +29,7 @@ public class DictionaryFile {
         }
         else{
             try {
-                newDictionaryFile.createNewFile();
+                if(newDictionaryFile.createNewFile()) System.out.println("New dictionary file created: can't used default");
             } catch (IOException e) {
                 System.err.println("Cannot create file");
                 System.exit(-1);
